@@ -13,9 +13,9 @@ export default function OrderManagement() {
 
   const fetchOrders = async () => {
     try {
-      let url = 'http://localhost:5000/api/orders';
+      let url = 'happy-cafe-happy-team-production.up.railway.app/api/orders';
       if (activeStatus !== 'all') {
-        url = `http://localhost:5000/api/orders/status/${activeStatus}`;
+        url = `happy-cafe-happy-team-production.up.railway.app/api/orders/status/${activeStatus}`;
       }
       
       const response = await fetch(url);
@@ -33,7 +33,7 @@ export default function OrderManagement() {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/${orderId}/status`, {
+      const response = await fetch(`happy-cafe-happy-team-production.up.railway.app/api/orders/${orderId}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

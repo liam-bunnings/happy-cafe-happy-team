@@ -62,7 +62,7 @@ mongod --dbpath data/db
 npm run dev
 ```
 
-The backend server will run on http://localhost:5000
+The backend server will run on happy-cafe-happy-team-production.up.railway.app
 
 ### 3. Frontend Setup
 

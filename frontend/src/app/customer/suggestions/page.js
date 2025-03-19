@@ -22,7 +22,7 @@ export default function SuggestionSubmission() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/suggestions', {
+      const response = await fetch('happy-cafe-happy-team-production.up.railway.app/api/suggestions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

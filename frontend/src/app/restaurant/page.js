@@ -16,7 +16,7 @@ export default function MenuManagement() {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/menus/${activeDay}/${activeWeek}`);
+        const response = await fetch(`happy-cafe-happy-team-production.up.railway.app/api/menus/${activeDay}/${activeWeek}`);
         if (response.ok) {
           const data = await response.json();
           setMenuItems(data.items || []);
@@ -51,7 +51,7 @@ export default function MenuManagement() {
 
   const handleSaveMenu = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/menus', {
+      const response = await fetch('happy-cafe-happy-team-production.up.railway.app/api/menus', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

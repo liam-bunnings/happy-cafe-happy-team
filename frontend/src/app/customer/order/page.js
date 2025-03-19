@@ -22,7 +22,7 @@ export default function OrderPlacement() {
     const fetchMenu = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`happy-cafe-happy-team-production.up.railway.app/api/menus/${activeDay}/${activeWeek}`);
+        const response = await fetch(`https://happy-cafe-happy-team-production.up.railway.app/api/menus/${activeDay}/${activeWeek}`);
         if (response.ok) {
           const data = await response.json();
           setMenu(data);
@@ -122,7 +122,7 @@ export default function OrderPlacement() {
     };
 
     try {
-      const response = await fetch('happy-cafe-happy-team-production.up.railway.app/api/orders', {
+      const response = await fetch('https://happy-cafe-happy-team-production.up.railway.app/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

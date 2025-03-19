@@ -13,7 +13,7 @@ export default function SuggestionsView() {
 
   const fetchSuggestions = async () => {
     try {
-      const response = await fetch('happy-cafe-happy-team-production.up.railway.app/api/suggestions');
+      const response = await fetch('https://happy-cafe-happy-team-production.up.railway.app/api/suggestions');
       if (response.ok) {
         const data = await response.json();
         setSuggestions(data);
@@ -28,7 +28,7 @@ export default function SuggestionsView() {
 
   const handleStatusChange = async (suggestionId, newStatus) => {
     try {
-      const response = await fetch(`happy-cafe-happy-team-production.up.railway.app/api/suggestions/${suggestionId}/status`, {
+      const response = await fetch(`https://happy-cafe-happy-team-production.up.railway.app/api/suggestions/${suggestionId}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

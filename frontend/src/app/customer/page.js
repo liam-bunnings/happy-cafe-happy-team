@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const weeks = ['current', 'next'];
 const timeSlots = ['12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM'];
 
 export default function MenuView() {
-  const [activeWeek, setActiveWeek] = useState('current');
+  const week = useSearchParams().get('week');
+  const [activeWeek, setActiveWeek] = useState(week || 'current');
   const [menus, setMenus] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -134,7 +136,7 @@ export default function MenuView() {
           {weeks.map((week) => (
             <button
               key={week}
-              className={`px-4 py-2 rounded ${activeWeek === week ? 'bg-green-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
+              className={`px-4 py-2 rounded ${activeWeek === week ? 'bg-primary-red text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
               onClick={() => setActiveWeek(week)}
             >
               {week.charAt(0).toUpperCase() + week.slice(1)} Week
@@ -184,7 +186,7 @@ export default function MenuView() {
                         onClick={() => toggleItemSelection(item, day)}
                         className={`ml-2 w-8 h-8 rounded-full flex items-center justify-center ${
                           isItemSelected(item.name, day)
-                            ? 'bg-yellow-400 text-white'
+                            ? 'bg-primary-green text-white'
                             : 'bg-gray-200 text-gray-500 hover:bg-gray-300'
                         }`}
                       >
@@ -262,7 +264,7 @@ export default function MenuView() {
                         type="button"
                         className={`px-4 py-2 rounded ${
                           selectedTime === time
-                            ? 'bg-green-600 text-white'
+                            ? 'bg-primary-green text-white'
                             : 'bg-gray-200 hover:bg-gray-300'
                         }`}
                         onClick={() => setSelectedTime(time)}
@@ -276,7 +278,7 @@ export default function MenuView() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 font-medium"
+                    className="w-full px-6 py-3 bg-primary-red text-white rounded hover:bg-secondary-red font-medium"
                   >
                     Place Order
                   </button>

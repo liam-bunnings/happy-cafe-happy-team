@@ -68,7 +68,7 @@ export default function OrderManagement() {
         <h3 className="text-lg font-medium mb-2">Filter by Status:</h3>
         <div className="flex space-x-4">
           <button
-            className={`px-4 py-2 rounded ${activeStatus === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
+            className={`px-4 py-2 rounded ${activeStatus === 'all' ? 'bg-primary-green text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
             onClick={() => setActiveStatus('all')}
           >
             All Orders
@@ -80,7 +80,7 @@ export default function OrderManagement() {
             Pending
           </button>
           <button
-            className={`px-4 py-2 rounded ${activeStatus === 'acknowledged' ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
+            className={`px-4 py-2 rounded ${activeStatus === 'acknowledged' ? 'bg-primary-green text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
             onClick={() => setActiveStatus('acknowledged')}
           >
             Acknowledged

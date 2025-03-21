@@ -86,7 +86,7 @@ export default function MenuManagement() {
           {weeks.map((week) => (
             <button
               key={week}
-              className={`px-4 py-2 rounded ${activeWeek === week ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
+              className={`px-4 py-2 rounded ${activeWeek === week ? 'bg-primary-green text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
               onClick={() => setActiveWeek(week)}
             >
               {week.charAt(0).toUpperCase() + week.slice(1)} Week
@@ -102,7 +102,7 @@ export default function MenuManagement() {
           {days.map((day) => (
             <button
               key={day}
-              className={`px-4 py-2 rounded ${activeDay === day ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
+              className={`px-4 py-2 rounded ${activeDay === day ? 'bg-primary-green text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
               onClick={() => setActiveDay(day)}
             >
               {day}
@@ -195,7 +195,7 @@ export default function MenuManagement() {
           </div>
         </div>
         <button
-          className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+          className="mt-4 px-4 py-2 bg-primary-red text-white rounded hover:bg-secondary-red"
           onClick={handleAddItem}
         >
           Add Item
@@ -204,7 +204,7 @@ export default function MenuManagement() {
       
       {/* Save Menu Button */}
       <button
-        className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        className="px-6 py-2 bg-primary-green text-white rounded hover:bg-blue-700"
         onClick={handleSaveMenu}
       >
         Save Menu
